@@ -11,7 +11,7 @@ template=/mnt/work/yyi/temp/ED_coreg/pilot_template.nii.gz
 # LC segmentation
 mask=$(ls -t "${folder}"/data/LCmask_"${ID}".nii.gz)
 
-# ---------- prepare images for trasnformation ---------- #
+# ---------- prepare images for transformation ---------- #
 
 # bias field correct T1 and EPI
 N4BiasFieldCorrection -d 3 -v 1 -r 0 -i "${folder}"data/T1mean.nii -o "${folder}"data/T1mean_corrected.nii -s 2 -c [200x150x100x50,1e-6] -b 200
