@@ -1,4 +1,4 @@
-%% LANDMARK PLOTTING: create 3D plots of created heatmaps, and compare
+%% LANDMARK STATS & PLOTTING
  
 clc;clear;close all
  
