@@ -100,10 +100,6 @@ for id = 1:length(IDs)
     rightLC=dummybase;
     rightLC(sub2ind(size(leftLC),coordsR(:,1),coordsR(:,2),coordsR(:,3))) = 1;
     
-    % tmp_keren=kerenmask;%[x_keren,y_keren,z_keren];
-    % leftLC = tmp_keren;leftLC(x_keren<mean(x_keren),:,:)=0; % choose everything that's on the left
-    % rightLC = tmp_keren;rightLC(x_keren>mean(x_keren),:,:)=0; % choose everything that's on the right
-    
     [xi_Left,yi_Left,zi_Left]=ind2sub(size(leftLC),find(leftLC~=0));
     left_indivs{id,1} = [xi_Left,yi_Left,zi_Left];
     [xi_Right,yi_Right,zi_Right]=ind2sub(size(rightLC),find(rightLC~=0));
