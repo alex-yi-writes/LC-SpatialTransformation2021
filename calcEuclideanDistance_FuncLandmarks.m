@@ -1,4 +1,4 @@
-%% LANDMARK STATS & PLOTTING
+%% Calculte Euclidean distances in transformed mean functional image landmarks
  
 clc;clear;close all
  
