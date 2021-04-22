@@ -56,7 +56,7 @@ antsApplyTransforms -d 3 -v 0 -n NearestNeighbor -t "${folder}"NLreg_template_to
 # 1st-level stats images -> MNI : ! linear interpolation !
 for I in {01..19}
 do
-	antsApplyTransforms -d 3 -v 1 -n Linear -t "${folder}"NLreg_template_to_MNI_1Warp.nii.gz -t "${folder}"NLreg_template_to_MNI_0GenericAffine.mat -t "${folder}"data/NLreg_T1mean_to_template_1Warp.nii.gz -t "${folder}"data/NLreg_T1mean_to_template_0GenericAffine.mat -t ["${folder}"data/coreg_T1mean_to_meanEPI_0GenericAffine.mat, 1] -i "${folder}"data/con_00${I}.nii -r "${MNI}" -o "${folder}"data/con_00${I}_mni.nii
+	antsApplyTransforms -d 3 -v 0 -n Linear -t "${folder}"NLreg_template_to_MNI_1Warp.nii.gz -t "${folder}"NLreg_template_to_MNI_0GenericAffine.mat -t "${folder}"data/NLreg_T1mean_to_template_1Warp.nii.gz -t "${folder}"data/NLreg_T1mean_to_template_0GenericAffine.mat -t ["${folder}"data/coreg_T1mean_to_meanEPI_0GenericAffine.mat, 1] -i "${folder}"data/con_00${I}.nii -r "${MNI}" -o "${folder}"data/con_00${I}_mni.nii
 done
 
 # ------------------------------------------------------ #
