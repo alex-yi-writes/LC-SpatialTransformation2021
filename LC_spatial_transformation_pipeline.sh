@@ -44,9 +44,6 @@ antsRegistrationSyN.sh -d 3 -t r -m "${folder}"data/T1mean_corrected.nii -f "${f
 # t1slab(resampled) -> T1
 antsRegistrationSyN.sh -d 3 -t r -m "${folder}"data/t1slab_1mm.nii -f "${folder}"data/T1mean_corrected.nii -o "${folder}"data/coreg_t1slab_to_T1mean_
 
-# T1 -> MNI
-antsApplyTransforms -d 3 -v 1 -n BSpline[4] -t "${folder}"NLreg_template_to_MNI_1Warp.nii.gz -t "${folder}"NLreg_template_to_MNI_0GenericAffine.mat -t "${folder}"data/NLreg_T1mean_to_template_1Warp.nii.gz -t "${folder}"data/NLreg_T1mean_to_template_0GenericAffine.mat -i "${folder}"data/T1mean_corrected.nii -r "${MNI}" -o "${folder}"data/NLreg_T1mean_to_MNI.nii
-
 # EPI -> MNI
 antsApplyTransforms -d 3 -v 1 -n BSpline[4] -t "${folder}"NLreg_template_to_MNI_1Warp.nii.gz -t "${folder}"NLreg_template_to_MNI_0GenericAffine.mat -t "${folder}"data/NLreg_T1mean_to_template_1Warp.nii.gz -t "${folder}"data/NLreg_T1mean_to_template_0GenericAffine.mat -t ["${folder}"data/coreg_T1mean_to_meanEPI_0GenericAffine.mat, 1] -i "${folder}"data/meanEPI_corrected.nii -r "${MNI}" -o "${folder}"data/NLreg_meanEPI_to_MNI.nii
 
