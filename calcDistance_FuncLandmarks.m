@@ -21,17 +21,17 @@ MNI.NucRuber=[];
 MNI.NucRuber.right=[102 113 71];
 MNI.NucRuber.left=[92 113 71];
  
-MNI.TopBrainstem=[97 102 71];
+MNI.TopBrainstem=[97 103 71];
  
 MNI.OutlineBrainstem=[];
-MNI.OutlineBrainstem.right=[109 103 60];
-MNI.OutlineBrainstem.left=[85 103 60];
+MNI.OutlineBrainstem.right=[108 101 56];
+MNI.OutlineBrainstem.left=[86 101 56];
  
 MNI.LC=[];
-MNI.LC.right=[100 97 60];
-MNI.LC.left=[94 97 60];
+MNI.LC.right=[101 95 56];
+MNI.LC.left=[93 95 56];
  
-MNI.BottomBrainstem=[97 94 50];
+MNI.BottomBrainstem=[97 95 50];
  
 disp('prep done')
  
