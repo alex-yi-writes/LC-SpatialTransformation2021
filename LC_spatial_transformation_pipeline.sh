@@ -19,6 +19,7 @@ N4BiasFieldCorrection -d 3 -v 1 -r 0 -i "${folder}"data/meanEPI.nii -o "${folder
 
 # make an EPI mask (FSL)
 /usr/local/fsl/bin/bet "${folder}"data/meanEPI_corrected.nii "${folder}"data/meanEPI_brain -f 0.5 -g 0 -n -m
+/usr/local/fsl/bin/bet "${folder}"data/T1mean_corrected.nii "${folder}"data/T1mean_brain -f 0.5 -g 0 -n -m
 
 # resample t1slab to T1 resolution (FreeSurfer)
 mri_convert -cs 1 -odt float -rl "${folder}"data/T1mean.nii -rt cubic "${folder}"data/t1slab.nii "${folder}"data/t1slab_1mm.nii
@@ -39,7 +40,7 @@ antsRegistrationSyN.sh -d 3 -t s -f "${template}" -m "${folder}"data/T1mean_corr
 antsApplyTransforms -d 3 -v 1 -n BSpline[4] -t "${folder}"NLreg_template_to_MNI_1Warp.nii.gz -t "${folder}"NLreg_template_to_MNI_0GenericAffine.mat -t "${folder}"data/NLreg_T1mean_to_template_1Warp.nii.gz -t "${folder}"data/NLreg_T1mean_to_template_0GenericAffine.mat -i "${folder}"data/T1mean_corrected.nii -r "${MNI}" -o "${folder}"data/NLreg_T1mean_to_MNI.nii
 
 # T1 -> EPI
-antsRegistrationSyN.sh -d 3 -t r -m "${folder}"data/T1mean_corrected.nii -f "${folder}"data/meanEPI_corrected.nii -x "${folder}"data/meanEPI_brain_mask.nii.gz -o "${folder}"data/coreg_T1mean_to_meanEPI_
+antsRegistrationSyN.sh -d 3 -t r -m "${folder}"data/T1mean_corrected.nii -f "${folder}"data/meanEPI_corrected.nii -x "${folder}"data/T1mean_brain_mask.nii.gz -o "${folder}"data/coreg_T1mean_to_meanEPI_
 
 # t1slab(resampled) -> T1
 antsRegistrationSyN.sh -d 3 -t r -m "${folder}"data/t1slab_1mm.nii -f "${folder}"data/T1mean_corrected.nii -o "${folder}"data/coreg_t1slab_to_T1mean_
