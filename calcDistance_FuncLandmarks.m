@@ -228,58 +228,59 @@ T=table(NucRuber_left,NucRuber_right,TopBrainstem,OutlineBrainstem_left,OutlineB
 Distance_export =[IDcolumn',NucRuber_left,NucRuber_right,TopBrainstem,OutlineBrainstem_left,OutlineBrainstem_right,...
     LC_left,LC_right,BottomBrainstem];
  
-save(['/Users/alex/Documents/ALEX_landmarks/EuclideanDistance_landmarks_FallypridePilot.mat'],'Distance_export')
+save([path_transformed 'EuclideanDistance_landmarks_FallypridePilot.mat'],'Distance_export')
  
 disp('distance calc done')
 
-%% calculate interrator agreement
+%% calculate interrater agreement (for two raters)
 
-load('/Users/alex/Dropbox/paperwriting/coreg/data/ID_pilot.mat')
+% load subject IDs
+load('/path/to/your/subject/ID/list/ID.mat')
 
-clear transformed_landmark_coords
-ML=load('/Users/alex/Documents/ALEX_landmarks/LandmarkCoordinates_pilot_ML.mat');
-AY=load('/Users/alex/Desktop/rt_epis_new/LandmarkCoordinates_pilot_AY.mat');
+clear transformed_landmark_coords tmp1 tmp2
+tmp1=load('LandmarkCoordinates_Rater1.mat');
+tmp2=load('LandmarkCoordinates_Rater2.mat');
 
 % calculate agreements per subject per landmark
 IR=[];
+
 for id=1:length(IDs)
-    
     
     % --------- top slice --------- %
     
     % top slice
-    clear ay ml
-    ay=AY.transformed_landmark_coords{id,1}.TopSlice;
-    ml=ML.transformed_landmark_coords{id,1}.TopSlice;
-    IR{id,1}.NucRuber_left      =sum(ay.NucRuber_left(1:2)==ml.NucRuber_left(1:2));
-    IR{id,1}.NucRuber_right     =sum(ay.NucRuber_right(1:2)==ml.NucRuber_right(1:2));
-    IR{id,1}.TopBrainstem       =sum(ay.TopBrainstem(1:2)==ml.TopBrainstem(1:2));
+    clear rater1 rater2
+    rater1=tmp2.transformed_landmark_coords{id,1}.TopSlice;
+    rater2=tmp1.transformed_landmark_coords{id,1}.TopSlice;
+    IR{id,1}.NucRuber_left      =sum(rater1.NucRuber_left(1:2)==rater2.NucRuber_left(1:2));
+    IR{id,1}.NucRuber_right     =sum(rater1.NucRuber_right(1:2)==rater2.NucRuber_right(1:2));
+    IR{id,1}.TopBrainstem       =sum(rater1.TopBrainstem(1:2)==rater2.TopBrainstem(1:2));
     
-    NucRuber_left(id,1)         =sum(ay.NucRuber_left(1:2)==ml.NucRuber_left(1:2));
-    NucRuber_right(id,1)        =sum(ay.NucRuber_right(1:2)==ml.NucRuber_right(1:2));
-    TopBrainstem(id,1)          =sum(ay.TopBrainstem(1:2)==ml.TopBrainstem(1:2));
+    NucRuber_left(id,1)         =sum(rater1.NucRuber_left(1:2)==rater2.NucRuber_left(1:2));
+    NucRuber_right(id,1)        =sum(rater1.NucRuber_right(1:2)==rater2.NucRuber_right(1:2));
+    TopBrainstem(id,1)          =sum(rater1.TopBrainstem(1:2)==rater2.TopBrainstem(1:2));
     
     
     % middle slice
-    clear ay ml
-    ay=AY.transformed_landmark_coords{id,1}.MidSlice;
-    ml=ML.transformed_landmark_coords{id,1}.MidSlice;
-    IR{id,1}.OutlineBrainstem_left      =sum(ay.OutlineBrainstem_left(1:2)==ml.OutlineBrainstem_left(1:2));
-    IR{id,1}.OutlineBrainstem_right     =sum(ay.OutlineBrainstem_right(1:2)==ml.OutlineBrainstem_right(1:2));
-    IR{id,1}.LC_left                    =sum(ay.LC_left(1:2)==ml.LC_left(1:2));
-    IR{id,1}.LC_right                   =sum(ay.LC_right(1:2)==ml.LC_right(1:2));
+    clear rater1 rater2
+    rater1=tmp2.transformed_landmark_coords{id,1}.MidSlice;
+    rater2=tmp1.transformed_landmark_coords{id,1}.MidSlice;
+    IR{id,1}.OutlineBrainstem_left      =sum(rater1.OutlineBrainstem_left(1:2)==rater2.OutlineBrainstem_left(1:2));
+    IR{id,1}.OutlineBrainstem_right     =sum(rater1.OutlineBrainstem_right(1:2)==rater2.OutlineBrainstem_right(1:2));
+    IR{id,1}.LC_left                    =sum(rater1.LC_left(1:2)==rater2.LC_left(1:2));
+    IR{id,1}.LC_right                   =sum(rater1.LC_right(1:2)==rater2.LC_right(1:2));
     
-    OutlineBrainstem_left(id,1)       =sum(ay.OutlineBrainstem_left(1:2)==ml.OutlineBrainstem_left(1:2));
-    OutlineBrainstem_right(id,1)      =sum(ay.OutlineBrainstem_right(1:2)==ml.OutlineBrainstem_right(1:2));
-    LC_left(id,1)                     =sum(ay.LC_left(1:2)==ml.LC_left(1:2));
-    LC_right(id,1)                    =sum(ay.LC_right(1:2)==ml.LC_right(1:2));
+    OutlineBrainstem_left(id,1)       =sum(rater1.OutlineBrainstem_left(1:2)==rater2.OutlineBrainstem_left(1:2));
+    OutlineBrainstem_right(id,1)      =sum(rater1.OutlineBrainstem_right(1:2)==rater2.OutlineBrainstem_right(1:2));
+    LC_left(id,1)                     =sum(rater1.LC_left(1:2)==rater2.LC_left(1:2));
+    LC_right(id,1)                    =sum(rater1.LC_right(1:2)==rater2.LC_right(1:2));
     
-    % bottom slice
-    clear ay ml
-    ay=AY.transformed_landmark_coords{id,1}.BottomSlice;
-    ml=ML.transformed_landmark_coords{id,1}.BottomSlice;
-    IR{id,1}.BottomBrainstem        =sum(ay.BottomBrainstem(1:2)==ml.BottomBrainstem(1:2));
-    BottomBrainstem(id,1)           =sum(ay.BottomBrainstem(1:2)==ml.BottomBrainstem(1:2));
+    % bottom slice2
+    clear rater1 rater
+    rater1=tmp2.transformed_landmark_coords{id,1}.BottomSlice;
+    rater2=tmp1.transformed_landmark_coords{id,1}.BottomSlice;
+    IR{id,1}.BottomBrainstem        =sum(rater1.BottomBrainstem(1:2)==rater2.BottomBrainstem(1:2));
+    BottomBrainstem(id,1)           =sum(rater1.BottomBrainstem(1:2)==rater2.BottomBrainstem(1:2));
     
 end
 
