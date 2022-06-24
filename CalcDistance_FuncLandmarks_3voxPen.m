@@ -192,18 +192,18 @@ Distances_indv=[];
 for subj=1:length(IDs)
     
     Distances_indv{subj,1}.NucRuber=[];
-    Distances_indv{subj,1}.NucRuber.left = sum((transformed_landmark_coords{subj,1}.TopSlice.NucRuber_left-MNI.NucRuber.left).^2).^0.5;
-    Distances_indv{subj,1}.NucRuber.right = sum((transformed_landmark_coords{subj,1}.TopSlice.NucRuber_right-MNI.NucRuber.right).^2).^0.5;
+    Distances_indv{subj,1}.NucRuber.left = sum((transformed_landmark_coords{subj,1}.TopSlice.NucRuber_left-MNI.NucRuber_left).^2).^0.5;
+    Distances_indv{subj,1}.NucRuber.right = sum((transformed_landmark_coords{subj,1}.TopSlice.NucRuber_right-MNI.NucRuber_right).^2).^0.5;
     
     Distances_indv{subj,1}.TopBrainstem = sum((transformed_landmark_coords{subj,1}.TopSlice.TopBrainstem-MNI.TopBrainstem).^2).^0.5;
     
     Distances_indv{subj,1}.OutlineBrainstem=[];
-    Distances_indv{subj,1}.OutlineBrainstem.left=sum((transformed_landmark_coords{subj,1}.MidSlice.OutlineBrainstem_left-MNI.OutlineBrainstem.left).^2).^0.5;
-    Distances_indv{subj,1}.OutlineBrainstem.right=sum((transformed_landmark_coords{subj,1}.MidSlice.OutlineBrainstem_right-MNI.OutlineBrainstem.right).^2).^0.5;
+    Distances_indv{subj,1}.OutlineBrainstem.left=sum((transformed_landmark_coords{subj,1}.MidSlice.OutlineBrainstem_left-MNI.OutlineBrainstem_left).^2).^0.5;
+    Distances_indv{subj,1}.OutlineBrainstem.right=sum((transformed_landmark_coords{subj,1}.MidSlice.OutlineBrainstem_right-MNI.OutlineBrainstem_right).^2).^0.5;
     
     Distances_indv{subj,1}.LC=[];
-    Distances_indv{subj,1}.LC.left=sum((transformed_landmark_coords{subj,1}.MidSlice.LC_left-MNI.LC.left).^2).^0.5;
-    Distances_indv{subj,1}.LC.right=sum((transformed_landmark_coords{subj,1}.MidSlice.LC_right-MNI.LC.right).^2).^0.5;
+    Distances_indv{subj,1}.LC.left=sum((transformed_landmark_coords{subj,1}.MidSlice.LC_left-MNI.LC_left).^2).^0.5;
+    Distances_indv{subj,1}.LC.right=sum((transformed_landmark_coords{subj,1}.MidSlice.LC_right-MNI.LC_right).^2).^0.5;
     
     Distances_indv{subj,1}.BottomBrainstem = sum((transformed_landmark_coords{subj,1}.BottomSlice.BottomBrainstem-MNI.BottomBrainstem).^2).^0.5;
     
@@ -226,8 +226,8 @@ T=table(NucRuber_left,NucRuber_right,TopBrainstem,OutlineBrainstem_left,OutlineB
 Distance_export =[IDcolumn',NucRuber_left,NucRuber_right,TopBrainstem,OutlineBrainstem_left,OutlineBrainstem_right,...
     LC_left,LC_right,BottomBrainstem];
  
-save([path_transformed 'Distance_EPILandmarks_' raterLabel '.mat'],'Distance_export')
-save([path_transformed 'LandmarkCoordinates_' raterLabel '.mat'],'transformed_landmark_coords')
+save([path_transformed 'Distance_EPILandmarks_' raterLabel{1} '.mat'],'Distance_export')
+save([path_transformed 'LandmarkCoordinates_' raterLabel{1} '.mat'],'transformed_landmark_coords')
  
 disp('distance calc done')
 
