@@ -26,8 +26,8 @@ for subj=1:length(IDs)
 end; clear subj
 
 % load the landmark image drawn on MNI
-MNIlandmark = spm_read_vols(spm_vol(['/path/to/your/MNI-landmarks/MNI_landmarks_for_EPI.nii'])); % change here accordingly to your file name
-MNIlandmark(find(MNIlandmark<1))=NaN;
+MNIlandmark = spm_read_vols(spm_vol(['/path/to/your/MNI-landmarks/MNI_landmarks_for_EPI_2Labels.nii'])); % change here accordingly to your file name
+MNIlandmark(find(MNIlandmark<2))=NaN; % change here accordingly to your MNI landmark labels
  
 % write down the coordinates of MNI landmarks
 [x_mni,y_mni,z_mni] = ind2sub(size(MNIlandmark),find(~isnan(MNIlandmark)));
