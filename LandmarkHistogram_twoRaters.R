@@ -124,22 +124,22 @@ p8 <- ggplot(data_BBS, aes(x = Distance, fill = Rater)) +
 
 # Add inset images (using cowplot)
 p3_inset <- ggdraw(p3) +
-  draw_image("/Users/alex/Dropbox/paperwriting/coreg/figures/PeriaqueductalGrey.png", 
+  draw_image("/your/path/to/Landmark_Insets/PeriaqueductalGrey.png", 
              x = 0.73, y = 0.58, width = 0.3, height = 0.3)
 p4_inset <- ggdraw(p4) +
-  draw_image("/Users/alex/Dropbox/paperwriting/coreg/figures/OutlineBrainstem_left.png", 
+  draw_image("/your/path/to/Landmark_Insets/OutlineBrainstem_left.png", 
              x = 0.73, y = 0.58, width = 0.3, height = 0.3)
 p5_inset <- ggdraw(p5) +
-  draw_image("/Users/alex/Dropbox/paperwriting/coreg/figures/OutlineBrainstem_right.png", 
+  draw_image("/your/path/to/Landmark_Insets/OutlineBrainstem_right.png", 
              x = 0.73, y = 0.58, width = 0.3, height = 0.3)
 p6_inset <- ggdraw(p6) +
-  draw_image("/Users/alex/Dropbox/paperwriting/coreg/figures/LC_left.png", 
+  draw_image("/your/path/to/Landmark_Insets/LC_left.png", 
              x = 0.73, y = 0.58, width = 0.3, height = 0.3)
 p7_inset <- ggdraw(p7) +
-  draw_image("/Users/alex/Dropbox/paperwriting/coreg/figures/LC_right.png", 
+  draw_image("/your/path/to/Landmark_Insets/LC_right.png", 
              x = 0.73, y = 0.58, width = 0.3, height = 0.3)
 p8_inset <- ggdraw(p8) +
-  draw_image("/Users/alex/Dropbox/paperwriting/coreg/figures/PerifastigialSulcus.png", 
+  draw_image("/your/path/to/Landmark_Insets/PerifastigialSulcus.png", 
              x = 0.73, y = 0.58, width = 0.3, height = 0.3)
 
 # Arrange all plots
