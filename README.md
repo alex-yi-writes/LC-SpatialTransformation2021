@@ -100,7 +100,6 @@ source $FREESURFER_HOME/SetUpFreeSurfer.sh
 - **Step 2**: Edit the 'Path' variable under System variables to include the paths to Python, ANTs, FSL, and FreeSurfer directories.
 
 Restart your terminal or command prompt to apply these changes. Now, you should be able to run the scripts provided in the repository by navigating to the Scripts directory and executing them as described in the Usage section.
-```
 
 ### Usage
 To use the scripts:
