@@ -6,7 +6,7 @@
 ### Overview
 This repository contains the complete set of scripts and methodologies used in our study on advanced MRI techniques focusing on the brainstem nuclei, especially the locus coeruleus. Our goal is to improve the analysis and reporting standards for structural and functional magnetic resonance imaging of this critical area.
 
-### Paper Reference
+### The Paper
 - Yeo-Jin Yi, Falk Lüsebrink, Mareike Ludwig, Anne Maaß, Gabriel Ziegler, Renat Yakupov, Michael C. Kreißl, Matthew Betts, Oliver Speck, Emrah Düzel, Dorothea Hämmerer. *Neurobiology of Aging*. 2023.
 - DOI: [10.1016/j.neurobiolaging.2023.04.007](https://doi.org/10.1016/j.neurobiolaging.2023.04.007)
 
