@@ -119,8 +119,5 @@ To use the scripts:
 ### Contributing
 We welcome contributions to improve the scripts and methodologies. Please fork the repository and submit a pull request with your proposed changes.
 
-### License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
 ### Contact
 For any questions or to request data access, please contact the corresponding author via email at [yeo-jin.yi.15@alumni.ucl.ac.uk](mailto:ucjuyyi@ucl.ac.uk) or [yyi@med.ovgu.de](mailto:yyi@med.ovgu.de).
