@@ -1,5 +1,5 @@
 ### Brainstem-focused Spatial Transformation Codesets
-#### A GitHub repository for the paper: "It is the locus coeruleus! Or… is it? A proposition for analyses and reporting standards for structural and functional magnetic resonance imaging of the noradrenergic locus coeruleus."
+#### A repository for the paper: "It is the locus coeruleus! Or… is it? A proposition for analyses and reporting standards for structural and functional magnetic resonance imaging of the noradrenergic locus coeruleus."
 
 ---
 
