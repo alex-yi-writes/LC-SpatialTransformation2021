@@ -34,7 +34,7 @@ To successfully run the scripts provided in this repository, specific software i
 - R (for .R files)
 - Python (for .py files)
 - Bash (for .sh scripts)
-- ANTs, FSL, FreeSurfer (for various image processing scripts)
+- ANTs, FSL, FreeSurfer (for various spatial transformation pipelines)
 
 Below are the quick guides to install each software needed (I use Linus and macOS):
 
