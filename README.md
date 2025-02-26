@@ -3,6 +3,8 @@
 
 ---
 
+![Spatial Transformation Pipeline Overview](coregpipeline.png)
+
 ### Overview
 This repository contains the complete set of scripts and methodologies used in our study on advanced MRI techniques focusing on the brainstem nuclei, especially the locus coeruleus. Our goal is to improve the analysis and reporting standards for structural and functional magnetic resonance imaging of this critical area.
 
