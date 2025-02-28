@@ -38,12 +38,12 @@ To successfully run the scripts provided in this repository, specific software i
 - Bash (for .sh scripts)
 - ANTs, FSL, FreeSurfer (for various spatial transformation pipelines)
 
-Below are the quick guides to install each software needed (I use Linus and macOS):
+Below are the quick guides to install each software needed (I use linux and macOS):
 
 #### MATLAB
 - **Step 1**: Visit the [MATLAB](https://www.mathworks.com/products/matlab.html) official website.
 - **Step 2**: Choose the appropriate version for your operating system and download it.
-- **Step 3**: Follow the installation instructions provided during the setup.
+- **Step 3**: Follow the installation instructions provided during the setup (no additional Addons are needed for the MATLAB scripts).
 
 #### R
 - **Step 1**: Download R from the [Comprehensive R Archive Network (CRAN)](https://cran.r-project.org/).
@@ -52,7 +52,7 @@ Below are the quick guides to install each software needed (I use Linus and macO
 #### Python
 - **Step 1**: Download Python from the official [Python website](https://www.python.org/downloads/).
 - **Step 2**: Select the latest version or a version that your scripts depend on.
-- **Step 3**: Install Python by following the setup instructions. Make sure to check 'Add Python to PATH' during installation.
+- **Step 3**: Install Python by following the setup instructions.
 
 #### Bash
 For Windows:
@@ -60,7 +60,7 @@ For Windows:
 - **Step 2**: Run the installer and follow the instructions to install Git along with the Bash shell.
 
 For macOS and Linux:
-- Bash is typically pre-installed. You can access it through the Terminal application.
+- Bash is typically pre-installed. You can access it through the Terminal App.
 
 #### ANTs (Advanced Normalization Tools)
 - **Step 1**: Download Pre-compiled ANTs Binaries. Visit the [ANTs GitHub Releases page](https://github.com/ANTsX/ANTs/releases) to find the latest pre-compiled binaries for your operating system.
@@ -79,7 +79,7 @@ For macOS and Linux:
 
 #### FreeSurfer
 - **Step 1**: Register at the [FreeSurfer website](https://surfer.nmr.mgh.harvard.edu/registration.html) to get access to the software.
-- **Step 2**: Follow the download and installation instructions provided after registration.
+- **Step 2**: Follow the download and installation instructions provided after registration (there's a very nice walkthrough video on their page!).
 - **Step 3**: Setup environment (add these lines to your shell profile, or simply execute these lines in your terminal window):
   ```bash
   export FREESURFER_HOME=/path/to/freesurfer
@@ -97,9 +97,9 @@ export PATH="/path/to/FSL/bin:$PATH"
 export FREESURFER_HOME="/path/to/freesurfer"
 source $FREESURFER_HOME/SetUpFreeSurfer.sh
 ```
-#### For Windows:
+#### For Windows (I admit that I have very little knowledge on how to set those toolboxes up in Windows OS...):
 - **Step 1**: Search for 'Environment Variables' in the Start Menu.
-- **Step 2**: Edit the 'Path' variable under System variables to include the paths to Python, ANTs, FSL, and FreeSurfer directories.
+- **Step 2**: Edit the 'Path' variable under System Variables to include the paths to Python, ANTs, FSL, and FreeSurfer directories.
 
 Restart your terminal or command prompt to apply these changes. Now, you should be able to run the scripts provided in the repository by navigating to the Scripts directory and executing them as described in the Usage section.
 
