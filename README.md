@@ -17,15 +17,15 @@ This repository contains the complete set of scripts and methodologies used in o
 - **Scripts/** - Contains all bash and R scripts used for data preprocessing and analysis:
   - **BuildStudySpecificTemplate_AY_20230104.sh** and **create_StudySpecificTemplate_20200201.sh** - Script to build study-specific MRI templates. Uses ANTs.
   - **CalcDistance_FuncLandmarks_1voxPen.m** and **CalcDistance_FuncLandmarks_3voxPen.m** - MATLAB functions for calculating distances in landmark images transformed onto the MNI- or study-specific template space.
-  - **LC_spatial_transformation_pipeline.sh** - Main Bash script for executing the spatial transformation pipeline.
-  - **coreg_pipeline_antsRegistration.sh** - Bash script for coregistration, using antsRegistration instead of antsRegistrationSyN
-  - **coregistration_pipeline_streamlined_20240924.sh** - Streamlined coregistration pipeline script. Uses ANTs.
-  - **LandmarkHistogram_singleRater.R** and **LandmarkHistogram_twoRaters.R** - R scripts for generating histogram figures of landmark assessments.
-  - **Register_and_Average_LCslabs_20201103.py** - Python script for registering and averaging landmark-based MRI slices.
-  - **makeAVIsnapshots.m** - MATLAB script for creating AVI video snapshots from MRI data.
-  - **makeHeatmaps.m** - MATLAB script for generating heatmaps from MRI data.
+  - **LC_spatial_transformation_pipeline.sh** - Main Bash script for running the spatial transformation pipeline.
+  - **coreg_pipeline_antsRegistration.sh** - Bash script for coregistration, using antsRegistration instead of antsRegistrationSyN.sh.
+  - **coregistration_pipeline_streamlined_20240924.sh** - Streamlined coregistration pipeline script.
+  - **LandmarkHistogram_singleRater.R** and **LandmarkHistogram_twoRaters.R** - R scripts for generating final histogram figures of landmark assessments.
+  - **Register_and_Average_LCslabs_20201103.py** - Python script for registering and averaging 'LC slabs'.
+  - **makeAVIsnapshots.m** - MATLAB script for creating AVI video snapshots from transformed images.
+  - **makeHeatmaps.m** - MATLAB script for generating heatmaps from transformed LC segmentations.
 - **Data/** - MRI datasets used in the study (Note: Due to privacy and ethical restrictions, the data is available upon request).
-  - **MNI_landmarks_v7_2Labels.nii** - Landmarks drawn on the structural MNI space. This file is required for running the distance calculation MATLAB scripts, **CalcDistance_FuncLandmarks_1voxPen.m** and **CalcDistance_FuncLandmarks_3voxPen.m**.
+  - **MNI_landmarks_v7_2Labels.nii** - Landmarks drawn on the structural MNI space. This file is required for running the distance calculation MATLAB scripts, **CalcDistance_FuncLandmarks_1voxPen.m** and **CalcDistance_FuncLandmarks_3voxPen.m**. (If you have your own MNI/study-specific structural templates, please draw your own!)
   - **T1_RegistryCheck_BothApproaches_LQ.mp4** - An example demonstration video of a coregistration method comparison performed on the structural images (T1).
 - **Documentation/**
   - **Manual_LCspatialTransformation_20221213.pdf** - Manual describing the procedures and standards proposed in the paper.
