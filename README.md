@@ -3,6 +3,10 @@
 
 ---
 
+UPDATE (09-07-2025): I've been working on a new dataset and, while doing that, found some new ways to improve normalisation in some ROIs. If you have some brains that are resistant to the standard pipeline, please give this one a go and let me know how you got on: [Jump to 2-stage nonlinear transformation](#2-stage-nonlinear-transformation-between-mean-functional-image-and-structural-whole-brain-image)
+
+---
+
 ![Spatial Transformation Pipeline Overview](coregpipeline.png)
 
 ### Overview
@@ -117,6 +121,12 @@ To use the scripts:
    ```
    ./coregistration_pipeline_streamlined_20240924.sh
    ```
+
+### 2-stage nonlinear transformation between mean functional image and structural whole-brain image.
+
+![My result of the 2-stage coreg](2stage.jpg)
+
+I've been working on another project and analyses that requires quite rigorous registration within a native subject space. What I realised during this is that some ROIs such as mPFC and pons suffer a great deal of distortions in functional image that makes the registration between mean functional image and structural whole-brain image particularly difficult. To combat this problem, I tried rigid + affine + deformable SyN transformation instead of rigid only and using reference masks to guide normalisation. As this specific step, meanfunc-anat, is one of the most frequence source of transformation errors in the final group-level outputs, I thought I could share this approach here too. It worked great for me and some of my functional datasets (partial-volume multiband EPI, 0.8mm isotropic voxel size). The example pipeline is `coregistration_2stage_20250217.sh` in the script folder of this repository. I'm curious to know how it worked for you! Please send me a short email if you have tried this method too, and if didn't work well, let's brainstorm together.
 
 ### Contributing
 I ALWAYS(!) welcome contributions to improve the scripts and methodologies - it's a group effort! :) Please fork the repository and submit a pull request with your proposed changes.
